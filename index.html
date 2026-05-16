@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصة وسيم الفاخرة للحجز الذكي</title>
+    <title>منصة وسيم الفاخرة لتميز الذكور</title>
     <link rel="stylesheet" href="salon.css">
 </head>
 <body>
 
     <div class="app-container">
-        
-        <!-- شريط مؤشر الخطوات المطور -->
+
+        <!-- شريط مؤشر الخطوات العلوي -->
         <div class="steps-header" id="secret-admin-trigger">
-            <div class="step-node active" id="node-1">الفرع</div>
-            <div class="step-node" id="node-2">الخدمة</div>
-            <div class="step-node" id="node-3">الأخصائي</div>
+            <div class="step-node active" id="node-1">الفروع</div>
+            <div class="step-node" id="node-2">الخدمات</div>
+            <div class="step-node" id="node-3">الحلاقين</div>
             <div class="step-node" id="node-4">الموعد</div>
             <div class="step-node" id="node-5">التأكيد</div>
         </div>
 
         <main class="wizard-engine">
-            
+
             <!-- الخطوة 1: الفروع -->
             <section id="step-1" class="wizard-step active">
                 <h2 class="step-title">اختر فرع صالون وسيم الأقرب إليك</h2>
@@ -37,6 +37,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="premium-card" onclick="selectBranch('Jeddah', 'فرع جدة - الروضة مارينا')">
                         <div class="image-frame-fix">
                             <img src="jeddah.jpg" alt="جدة">
@@ -56,9 +57,9 @@
             <section id="step-2" class="wizard-step">
                 <h2 class="step-title">اختر باقة الخدمة الفاخرة</h2>
                 
-                <h3 class="section-subtitle">الباقات الرئيسية الشاملة</h3>
+                <h3 class="section-subtitle">الباقات الرئيسية المتكاملة</h3>
                 <div class="cards-grid">
-                    <div class="premium-card" onclick="selectService('الباقة الملكية المتكاملة', 300)">
+                    <div class="premium-card" onclick="selectService('300', 'الباقة الملكية المتكاملة Royal VIP')">
                         <div class="image-frame-fix">
                             <img src="royal.jpg" alt="الباقة الملكية" class="royal-img-align">
                             <span class="floating-price">300 ر.س</span>
@@ -66,52 +67,54 @@
                         <div class="card-info-row">
                             <div class="details-wrapper">
                                 <h3>الباقة الملكية المتكاملة</h3>
-                                <p>قص شعر نخبوي مع غسيل وسشوار، تصفيف اللحية بالموس الحار، جلسة مساج سريع للأكتاف والرقبة.</p>
+                                <p>قص شعر نخبوي مع غسيل وسشوار، تصنيف اللحية بالموس الحاد، جلسة مساج مريح للأكتاف والرقبة.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="premium-card" onclick="selectService('باقة العناية الفاخرة بالبشرة واللحية', 150)">
+
+                    <div class="premium-card" onclick="selectService('150', 'باقة العناية الفاخرة بالبشرة واللحية')">
                         <div class="image-frame-fix">
                             <img src="beard.jpg" alt="تحديد اللحية">
                             <span class="floating-price">150 ر.س</span>
                         </div>
                         <div class="card-info-row">
                             <div class="details-wrapper">
-                                <h3>تحديد اللحية مع تنظيف بشرة بالبخار</h3>
+                                <h3>العناية الفاخرة بالبشرة واللحية</h3>
                                 <p>رسم وتحديد خطوط اللحية بدقة بالليزر والموس، مع قناع بخار دافئ وصنفرة طبيعية لإزالة الرؤوس السوداء.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- تم تحديث العنوان بعبارة نصوص احترافية بناءً على طلبك البشري التسويقي -->
-                <h3 class="section-subtitle">للمزيد من الباقات</h3>
+                <h3 class="section-subtitle">تفريد من الباقات الفردية والمميزة</h3>
                 <div class="cards-grid">
-                    <div class="premium-card" onclick="selectService('باقة العريس (المعرس) الملكية', 600)">
+                    <div class="premium-card" onclick="selectService('600', 'زمالة الفرسان (العريس) المثالية')">
                         <div class="card-info-row text-only-padding">
                             <div class="details-wrapper">
-                                <h3>باقة المعرس الفاخرة والتجهيز الكامل</h3>
-                                <p>بروتوكول VIP متكامل: حلاقة وتصفيف، حمام زيت علاجي للشعر، فيشل الذهب لتفتيح البشرة، مع باديكير ومناكير للعناية بالأطراف.</p>
+                                <h3>زمالة الفرسان (العريس) المثالية</h3>
+                                <p>حلاقة وتصفيف حمام زيت كيراتين للشعر، غسيل للشعر الفاخر بأحدث وسائل التنعيم والترطيب الشاملة، حمام زيت علاجي للشعر، فيشيال تنظيف السنفرة للبشرة بتركيز وماسك الكولاجين الفاخر لوجه متوهج وجذاب VIP بروتوكول.</p>
+                                <div class="flat-price-label">600 ر.س</div>
                             </div>
-                            <div class="flat-price-label">600 ر.س</div>
                         </div>
                     </div>
-                    <div class="premium-card" onclick="selectService('باقة VIP للمناسبات والاجتماعات', 400)">
+
+                    <div class="premium-card" onclick="selectService('400', 'المناسبات والاجتماعات الـ VIP')">
                         <div class="card-info-row text-only-padding">
                             <div class="details-wrapper">
-                                <h3>باقة VIP لتجهيز المناسبات والاجتماعات</h3>
-                                <p>باقة سريعة ومكثفة: استشوار وقص متقن، صبغ وتغطية الشيب للحية بمواد طبيعية، ماسك الكولاجين الفوري لشد ونضارة الوجه.</p>
+                                <h3>المناسبات والاجتماعات الـ VIP</h3>
+                                <p>تجهيز للمناسبات والاجتماعات الـ VIP بشكل سريع ومكثف سشوار وقص بدقة واللحية أنسب لقصة لوجهك بمواد طبيعية، ماسك الكولاجين الفوري لشد الوجه وإخفاء الإرهاق.</p>
+                                <div class="flat-price-label">400 ر.س</div>
                             </div>
-                            <div class="flat-price-label">400 ر.س</div>
                         </div>
                     </div>
-                    <div class="premium-card" onclick="selectService('جلسة باديكير سبا للأقدام', 120)">
+
+                    <div class="premium-card" onclick="selectService('120', 'جلسة باديكير سريعة للأقدام')">
                         <div class="card-info-row text-only-padding">
                             <div class="details-wrapper">
-                                <h3>جلسة باديكير سبا واسترخاء للأقدام</h3>
-                                <p>تنظيف وتقشير عميق للقدمين بملاح البحر الميت، إزالة الجلد الميت، مع مساج استرخائي لتخفيف الإجهاد.</p>
+                                <h3>جلسة باديكير سريعة للأقدام</h3>
+                                <p>تنظيف وتقشير عميق للقدمين بعلاج الجلد الميت وإزالة الجلد الميت، مع مساج استرخائي لتخفيف الإجهاد.</p>
+                                <div class="flat-price-label">120 ر.س</div>
                             </div>
-                            <div class="flat-price-label">120 ر.س</div>
                         </div>
                     </div>
                 </div>
@@ -121,17 +124,17 @@
                 </div>
             </section>
 
-            <!-- الخطوة 3: الأخصائيين -->
+            <!-- الخطوة 3: الحلاقين -->
             <section id="step-3" class="wizard-step">
-                <h2 class="step-title">اختر أخصائي الحلاقة المفضل</h2>
+                <h2 class="step-title">اختر أخصائي العناية المفضّل</h2>
                 <div class="cards-grid" id="barbers-container"></div>
                 <div class="action-flex-buttons">
                     <button class="btn-ui btn-ui-back" onclick="goToStep(2)">الخدمة السابقة</button>
-                    <button class="btn-ui btn-ui-next" id="next-to-4" disabled onclick="handleBarberNext()">المتابعة للموعد</button>
+                    <button class="btn-ui btn-ui-next" id="next-to-4" disabled onclick="handleBarberNext()">الموعد والموعد والتوقيت</button>
                 </div>
             </section>
 
-            <!-- الخطوة 4: الوقت والتقويم -->
+            <!-- الخطوة 4: الوقت والتاريخ -->
             <section id="step-4" class="wizard-step">
                 <h2 class="step-title">حدد تاريخ ووقت الحجز المتاح</h2>
                 <input type="date" id="booking-date" class="date-picker">
@@ -142,16 +145,16 @@
                 </div>
                 <div class="action-flex-buttons">
                     <button class="btn-ui btn-ui-back" onclick="goToStep(3)">الأخصائي السابق</button>
-                    <button class="btn-ui btn-ui-next" id="next-to-5" disabled onclick="goToStep(5)">المتابعة للتأكيد</button>
+                    <button class="btn-ui btn-ui-next" id="next-to-5" disabled onclick="goToStep(5)">مراجعة وتأكيد الحجز</button>
                 </div>
             </section>
 
-            <!-- الخطوة 5: التأكيد وبوابة الدفع -->
+            <!-- الخطوة 5: التأكيد ومراجعة الدفع -->
             <section id="step-5" class="wizard-step">
                 <h2 class="step-title">مراجعة بياناتك والدفع الإلكتروني</h2>
                 <form onsubmit="confirmBooking(event)">
                     <div class="input-block">
-                        <label>اسمك الكريم</label>
+                        <label>الاسم الكريم</label>
                         <input type="text" id="user-name" required placeholder="أدخل اسمك الثنائي">
                     </div>
                     <div class="input-block">
@@ -159,86 +162,92 @@
                         <input type="tel" id="user-phone" required placeholder="05xxxxxxxx">
                     </div>
 
-                    <label class="pay-title-label">اختر وسيلة الدفع المعتمدة:</label>
+                    <label class="pay-title-label">اختر وسيلة الدفع المعتمدة</label>
                     <div class="pay-methods-grid">
-                        <div class="pay-card selected-pay" id="pay-mada" onclick="selectPaymentMethod('pay-mada', 'بطاقة مدى الإلكترونية')">🇸🇦 مدى</div>
-                        <div class="pay-card" id="pay-apple" onclick="selectPaymentMethod('pay-apple', 'Apple Pay')">📱 Apple Pay</div>
-                        <div class="pay-card" id="pay-visa" onclick="selectPaymentMethod('pay-visa', 'بطاقة فيزا / ماستر كارد')">💳 فيزا</div>
+                        <div class="pay-card selected-pay" id="pay-mada" onclick="selectPaymentMethod('pay-mada', 'Mada')">
+                            <span style="font-size: 15px; font-weight: bold; color: #fff;">💳 مدى</span>
+                        </div>
+                        <div class="pay-card" id="pay-apple" onclick="selectPaymentMethod('pay-apple', 'Apple Pay')">
+                            <span style="font-size: 15px; font-weight: bold; color: #fff;">📱 Apple Pay</span>
+                        </div>
+                        <div class="pay-card" id="pay-visa" onclick="selectPaymentMethod('pay-visa', 'Visa / Mastercard')">
+                            <span style="font-size: 15px; font-weight: bold; color: #fff;">💳 Visa</span>
+                        </div>
                     </div>
-                    
+
                     <div class="receipt-card">
-                        <div class="receipt-head"><h4>تذكرة حجز صالون وسيم الرقمية</h4></div>
+                        <div class="receipt-header">تذكرة حجز صالون وسيم الرقمية</div>
                         <div class="receipt-body">
-                            <div class="receipt-line"><span>الفرع المختار:</span><strong id="sum-branch"></strong></div>
-                            <div class="receipt-line"><span>الباقة المستهدفة:</span><strong id="sum-service"></strong></div>
-                            <div class="receipt-line"><span>الأخصائي المجدول:</span><strong id="sum-barber"></strong></div>
-                            <div class="receipt-line"><span>الموعد المحدد:</span><strong id="sum-time"></strong></div>
-                            <div class="receipt-line"><span>وسيلة السداد:</span><strong id="sum-method">بطاقة مدى الإلكترونية</strong></div>
+                            <div class="receipt-line"><span>الفرع المختار:</span> <strong id="sum-branch">-</strong></div>
+                            <div class="receipt-line"><span>الباقة المحجوزة:</span> <strong id="sum-service">-</strong></div>
+                            <div class="receipt-line"><span>الأخصائي المجدول:</span> <strong id="sum-barber">-</strong></div>
+                            <div class="receipt-line"><span>التوقيت والتاريخ:</span> <strong id="sum-time">-</strong></div>
+                            <div class="receipt-line"><span>وسيلة السداد:</span> <strong id="sum-method">-</strong></div>
                             <div class="receipt-divider"></div>
-                            <div class="receipt-total">إجمالي المدفوع: <span id="sum-price"></span></div>
+                            <div class="receipt-total"><span>إجمالي المدفوع:</span> <strong id="sum-price">-</strong></div>
                         </div>
                     </div>
 
                     <div class="whatsapp-notice-box">
                         <div class="whatsapp-container-circle">
-                            <img src="whatsapp.avif" alt="WhatsApp" class="whatsapp-ui-img">
+                            <img src="whatsapp.png" alt="" class="whatsapp-ui-img">
                         </div>
-                        <span>تنبيه: بمجرد ضغط تأكيد، ستصلك تذكرة موعدك ولوكيشن الفرع وإيصال السداد فورا عبر الواتساب.</span>
+                        <span>تنبيه: بمجرد ضغط تأكيد، ستصلك تذكرة موعدك والإيصال فوراً على الواتساب.</span>
                     </div>
-                    
+
                     <div class="action-flex-buttons">
                         <button type="button" class="btn-ui btn-ui-back" onclick="goToStep(4)">الموعد السابق</button>
-                        <button type="submit" class="btn-ui btn-ui-next">تأكيد وسداد</button>
+                        <button type="submit" class="btn-ui btn-ui-next">تأكيد الموعد</button>
                     </div>
                 </form>
             </section>
-
         </main>
-    </div>
 
-    <!-- لوحة الحجز الناجح والنهائي -->
-    <div id="success-modal" class="modal-blur">
-        <div class="modal-panel">
-            <div class="modal-icons-holder">
-                <div class="modal-wa-circle">
-                    <img src="whatsapp.avif" alt="WhatsApp" class="modal-wa-img">
+        <!-- لوحة الحجز الناجح والمودال الزجاجي -->
+        <div id="success-modal" class="modal-blur">
+            <div class="modal-panel">
+                <div class="modal-icons-holder">
+                    <div class="modal-wa-circle">
+                        <img src="whatsapp.png" alt="" class="modal-wa-img">
+                    </div>
                 </div>
+                <h5>تم تأكيد الحجز والنداء!</h5>
+                <p>شكراً يا هلا والله وغلا، تمت جدولة الموعد بنجاح. وأعضاء إدارة التميز والإتقان ترسل مرسلاً آلياً لجوالك المميز عبر تطبيق الواتساب.</p>
+                <button class="btn-ui btn-ui-next" style="width: 100%;" onclick="closeModal()">موافق</button>
             </div>
-            <h3>تم تأكيد الحجز والسداد!</h3>
-            <p>يا هلا والله وغلا! تمت جَدْولة الموعد بنجاح، وتجد تذكرة الحجز وإيصال سداد الدفع ولوكيشن الفرع مرسلة الآن لجوالك الفعال عبر تطبيق الـ WhatsApp.</p>
-            <button class="btn-ui btn-ui-next" style="width: 100%;" onclick="closeModal()">موافق</button>
         </div>
-    </div>
 
-    <!-- لوحة الإدارة والتحكم السرية للمدير (تفتح بالنقرة المطولة ثانيتين على الشريط العلوي) -->
-    <div id="admin-modal" class="modal-blur">
-        <div class="modal-panel" style="max-width: 400px; text-align: right;">
-            <h3 style="color: var(--gold-glow); text-align: center; margin-bottom: 15px;">📊 لوحة تحكم الإدارة السرية</h3>
-            <div style="background: #222; padding: 12px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #333;">
-                <p style="font-size: 13px; margin-bottom: 6px;">💰 إجمالي مبيعات اليوم: <strong style="color: var(--neon-green);" id="admin-total-sales">0 ر.س</strong></p>
-                <p style="font-size: 13px;">📅 عدد الحجوزات النشطة: <strong id="admin-total-count">0 حجز</strong></p>
+        <!-- لوحة الإدارة والتحكم السريعة (تفتح بالضغط الطويل على شريط الخطوات العلوي) -->
+        <div id="admin-modal" class="modal-blur">
+            <div class="modal-panel" style="max-width: 400px; text-align: right;">
+                <h1 style="color: var(--gold-glow); text-align: center; margin-bottom: 15px;">لوحة تحكم الإدارة السرية</h1>
+                <div style="background: #222; padding: 12px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #333;">
+                    <p style="font-size: 13px; margin-bottom: 8px;">إجمالي المبيعات المحققة: <span id="admin-total-sales" style="color: var(--neon-green); font-weight: bold;">0</span> ر.س</p>
+                    <p style="font-size: 13px; margin-bottom: 0px;">إجمالي الحجوزات النشطة: <span id="admin-total-count" style="font-weight: bold;">0</span> حجز</p>
+                </div>
+                <h4 style="font-size: 12px; margin-bottom: 8px; color: var(--silver-trim);">قائمة الحجوزات الأخيرة في النظام:</h4>
+                <div id="admin-orders-list" style="max-height: 150px; overflow-y: auto; font-size: 11px; color: #ccc;">
+                    <p style="text-align: center; color: var(--text-darker);">لا توجد حجوزات مسجلة حالياً.</p>
+                </div>
+                <button class="btn-ui btn-ui-back" style="width: 100%; margin-top: 15px; background: #333;" onclick="closeAdminModal()">إغلاق اللوحة</button>
             </div>
-            <h4 style="font-size: 12px; margin-bottom: 8px; color: var(--silver-trim);">قائمة الحجوزات الأخيرة في المتصفح:</h4>
-            <div id="admin-orders-list" style="max-height: 150px; overflow-y: auto; font-size: 11px; color: #ccc;">
-                <p style="text-align: center; color: var(--text-darker);">لا توجد حجوزات مسجلة حالياً.</p>
-            </div>
-            <button class="btn-ui btn-ui-back" style="width: 100%; margin-top: 15px; background: #333;" onclick="closeAdminModal()">إغلاق لوحة التحكم</button>
         </div>
+
     </div>
 
     <script>
         const barbersData = {
             Riyadh: [
-                { name: 'أخصائي وسام (خبير الباقات الملكية)', rating: '4.9 ★' },
-                { name: 'أخصائي فهد (خبير تحديد ذقن وموس)', rating: '4.8 ★' }
+                { name: "أخصائي وسام (خبير الباقات الملكية)", rating: "4.9 ★" },
+                { name: "أخصائي فهد (خبير تحديد ذقن وموس)", rating: "4.8 ★" }
             ],
             Jeddah: [
-                { name: 'أخصائي كريم (ستايليست مودرن)', rating: '4.9 ★' },
-                { name: 'أخصائي أحمد (خبير العناية والفيشل)', rating: '4.7 ★' }
+                { name: "أخصائي كريم (المناسبات مودرن)", rating: "4.9 ★" },
+                { name: "أخصائي أحمد (خبير العناية والتقشير)", rating: "4.7 ★" }
             ]
         };
 
-        let state = { branchCode: '', branch: '', service: '', price: 0, barber: '', date: '', time: '', payMethod: 'بطاقة مدى الإلكترونية' };
+        let state = { branchCode: '', branch: '', service: '', price: 0, barber: '', date: '', time: '', payMethod: 'Mada' };
 
         function goToStep(num) {
             document.querySelectorAll('.wizard-step').forEach(s => s.classList.remove('active'));
@@ -246,7 +255,7 @@
             if (currentSection) {
                 currentSection.classList.add('active');
             }
-            
+
             document.querySelectorAll('.step-node').forEach((node, idx) => {
                 if (idx < num) node.classList.add('active');
                 else node.classList.remove('active');
@@ -262,25 +271,25 @@
             }
         }
 
-        function selectBranch(code, name) { 
-            state.branchCode = code; 
-            state.branch = name; 
+        function selectBranch(code, name) {
+            state.branchCode = code;
+            state.branch = name;
             renderBarbers(code);
-            goToStep(2); 
+            goToStep(2);
         }
-        
-        function selectService(name, price) { 
-            state.service = name; 
-            state.price = price; 
-            goToStep(3); 
+
+        function selectService(price, name) {
+            state.service = name;
+            state.price = price;
+            goToStep(3);
         }
 
         function renderBarbers(branchCode) {
             const container = document.getElementById('barbers-container');
             container.innerHTML = '';
-            
+
             const nextBtn = document.getElementById('next-to-4');
-            if (nextBtn) nextBtn.disabled = true;
+            if(nextBtn) nextBtn.disabled = true;
 
             barbersData[branchCode].forEach(barber => {
                 const card = document.createElement('div');
@@ -289,13 +298,13 @@
                     document.querySelectorAll('#barbers-container .premium-card').forEach(c => c.classList.remove('selected-card'));
                     card.classList.add('selected-card');
                     state.barber = barber.name;
-                    if (nextBtn) nextBtn.disabled = false;
+                    if(nextBtn) nextBtn.disabled = false;
                 };
                 card.innerHTML = `
                     <div class="card-info-row">
                         <div class="details-wrapper">
                             <h3>${barber.name}</h3>
-                            <p>تقييم العملاء: <span style="color:var(--gold-glow); font-weight:bold;">${barber.rating}</span></p>
+                            <p>التقييم العام: <span style="color: var(--gold-glow); font-weight: bold;">${barber.rating}</span></p>
                         </div>
                     </div>
                 `;
@@ -320,7 +329,7 @@
         }
 
         function selectTime(element, timeStr) {
-            document.querySelectorAll('.time-node').forEach(s => s.classList.remove('selected'));
+            document.querySelectorAll('.time-node').forEach(n => n.classList.remove('selected'));
             element.classList.add('selected');
             state.time = timeStr;
             const confirmBtn = document.getElementById('next-to-5');
@@ -340,7 +349,7 @@
         function confirmBooking(e) {
             e.preventDefault();
             const clientName = document.getElementById('user-name').value;
-            
+
             let existingOrders = JSON.parse(localStorage.getItem('salon_orders')) || [];
             existingOrders.push({
                 name: clientName,
@@ -357,18 +366,16 @@
         function closeModal() {
             document.getElementById('success-modal').classList.remove('active');
             goToStep(1);
-            state = { branchCode: '', branch: '', service: '', price: 0, barber: '', date: '', time: '' , payMethod: 'بطاقة مدى الإلكترونية'};
-            document.querySelectorAll('.time-node').forEach(s => s.classList.remove('selected'));
+            state = { branchCode: '', branch: '', service: '', price: 0, barber: '', date: '', time: '', payMethod: 'Mada' };
+            document.querySelectorAll('.time-node').forEach(n => n.classList.remove('selected'));
             
             const nextBtn = document.getElementById('next-to-4');
             const confirmBtn = document.getElementById('next-to-5');
             if (nextBtn) nextBtn.disabled = true;
             if (confirmBtn) confirmBtn.disabled = true;
-            
-            document.querySelector('form').reset();
         }
 
-        // منطق النقرة السرية المطولة (ثانيتين) لفتح لوحة المدير وحمايتها من التداخل البصري
+        // تفعيل لوحة السرية المطولة (الآدمن) لفتح لوحة المدير داخلياً من الواجهة
         let pressTimer;
         const trigger = document.getElementById('secret-admin-trigger');
 
@@ -380,7 +387,7 @@
         function startPress() {
             pressTimer = setTimeout(() => {
                 openAdminDashboard();
-            }, 2000);
+            }, 3000);
         }
 
         function cancelPress() {
@@ -389,23 +396,23 @@
 
         function openAdminDashboard() {
             const orders = JSON.parse(localStorage.getItem('salon_orders')) || [];
-            const totalSales = orders.reduce((sum, order) => sum + order.price, 0);
-            
+            const totalSales = orders.reduce((sum, order) => sum + Number(order.price), 0);
+
             document.getElementById('admin-total-sales').innerText = totalSales + ' ر.س';
             document.getElementById('admin-total-count').innerText = orders.length + ' حجز';
-            
+
             const listContainer = document.getElementById('admin-orders-list');
             if(orders.length > 0) {
                 listContainer.innerHTML = orders.map(o => `
-                    <div style="border-bottom:1px solid #333; padding: 6px 0; line-height:1.4;">
-                        👤 ${o.name} - ✂️ ${o.service.substring(0,18)}...<br>
+                    <div style="border-bottom: 1px solid #333; padding: 6px 0; line-height: 1.4;">
+                        👨🏻‍💼 ${o.name} | 🛠️ ${o.service.substring(0,18)}... <br>
                         📅 ${o.date} | 💰 ${o.price} ر.س
                     </div>
                 `).join('');
             } else {
                 listContainer.innerHTML = '<p style="text-align: center; color: var(--text-darker); padding: 10px 0;">لا توجد حجوزات مسجلة حالياً.</p>';
             }
-            
+
             document.getElementById('admin-modal').classList.add('active');
         }
 
