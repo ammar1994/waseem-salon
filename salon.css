@@ -1,0 +1,410 @@
+@import url('https://googleapis.com');
+
+:root {
+    --bg-deep: #090909;
+    --panel-prime: #131313;
+    --card-layer: #1a1a1a;
+    --gold-glow: #d4af37;
+    --silver-trim: #b3b3b3;
+    --text-pure: #ffffff;
+    --text-darker: #8a8a8a;
+    --neon-green: #2ecc71;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Tajawal', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-deep);
+    color: var(--text-pure);
+    padding: 20px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 460px;
+    background-color: var(--panel-prime);
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    padding: 22px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+}
+
+/* شريط الخطوات العلوي */
+.steps-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.02);
+    padding: 10px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255,255,255,0.04);
+}
+
+.steps-header .step-node {
+    text-align: center;
+    color: var(--text-darker);
+    font-size: 11px;
+    flex: 1;
+    opacity: 0.3;
+    font-weight: bold;
+}
+
+.steps-header .step-node.active {
+    color: var(--gold-glow);
+    opacity: 1;
+}
+
+.step-title {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--silver-trim);
+}
+
+/* محرك الملاحة للمراحل */
+.wizard-step { display: none; }
+.wizard-step.active { display: block; }
+
+.cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.premium-card {
+    background-color: var(--card-layer);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.premium-card:hover, .premium-card.selected-card {
+    border-color: var(--gold-glow);
+    background-color: #1e1e1e;
+}
+
+/* تثبيت الصور هندسياً وحمايتها من التمدد الطولي */
+.image-frame-fix {
+    width: 100%;
+    height: 160px;
+    position: relative;
+    background-color: #111;
+    overflow: hidden;
+}
+
+.image-frame-fix img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* إنقاذ ورفع كادر صورة الباقة الملكية لمنع بتر اللحية والذقن */
+.royal-img-align {
+    object-position: center 25% !important;
+}
+
+/* تصميم شارة مفتوح الآن الفاخرة المضيئة */
+.floating-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: var(--gold-glow);
+    border: 1px solid var(--gold-glow);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.floating-badge::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    background-color: var(--neon-green);
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px var(--neon-green);
+}
+
+.floating-price {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background-color: rgba(0,0,0,0.8);
+    color: var(--gold-glow);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--gold-glow);
+}
+
+.card-info-row {
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.text-only-padding { padding: 18px 14px; }
+
+.details-wrapper { flex-grow: 1; }
+.details-wrapper h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; color: var(--text-pure); }
+.details-wrapper p { font-size: 11px; color: var(--text-darker); line-height: 1.4; }
+
+.section-subtitle {
+    font-size: 13px;
+    color: var(--gold-glow);
+    margin: 15px 0 10px 0;
+    font-weight: 700;
+    border-right: 3px solid var(--gold-glow);
+    padding-right: 8px;
+}
+
+.flat-price-label {
+    color: var(--gold-glow);
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* التقويم */
+.date-picker {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--card-layer);
+    border: 1px solid rgba(255,255,255,0.06);
+    color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    text-align: center;
+}
+
+.slots-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.time-node {
+    background-color: var(--card-layer);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 12px 4px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.time-node.selected {
+    background-color: var(--gold-glow);
+    color: #121212;
+    font-weight: 700;
+}
+
+/* الأزرار والمداخل */
+.pay-title-label {
+    font-size: 11px;
+    color: var(--text-darker);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.pay-methods-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.pay-card {
+    background-color: var(--card-layer);
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 8px;
+    padding: 12px 5px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.pay-card.selected-pay {
+    border-color: var(--gold-glow);
+    background-color: rgba(212,175,55,0.05);
+    color: var(--gold-glow);
+}
+
+.action-flex-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    gap: 12px;
+}
+
+.btn-ui {
+    padding: 13px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-ui-back {
+    background-color: rgba(255,255,255,0.04);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.07);
+    width: 40%;
+}
+
+.btn-ui-next {
+    background-color: var(--gold-glow);
+    color: #0d0d0d;
+    width: 60%;
+}
+
+.btn-ui:disabled { opacity: 0.2; cursor: not-allowed; }
+
+.input-block { margin-bottom: 14px; }
+.input-block label { display: block; font-size: 11px; color: var(--text-darker); margin-bottom: 5px; }
+.input-block input {
+    width: 100%; padding: 11px; background-color: #0b0b0b;
+    border: 1px solid rgba(255,255,255,0.07); color: white; border-radius: 8px; outline: none;
+}
+
+/* صندوق الواتساب المطور الدائري النظيف */
+.whatsapp-notice-box {
+    background-color: rgba(37, 211, 102, 0.06);
+    border: 1px dashed rgba(37, 211, 102, 0.25);
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.whatsapp-container-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border: 2px solid #25d366;
+    box-shadow: 0 0 10px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-ui-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.45); /* زوم عميق لحجب البياض تماماً */
+}
+
+.whatsapp-notice-box span {
+    color: #e0e0e0;
+    font-size: 11px;
+    line-height: 1.5;
+    text-align: right;
+}
+
+/* التذكرة الرقمية */
+.receipt-card {
+    background: linear-gradient(135deg, #161616 0%, #202020 100%);
+    border-radius: 14px;
+    border: 1px solid rgba(212,175,55,0.25);
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.receipt-head {
+    background-color: rgba(212,175,55,0.06);
+    padding: 12px 14px;
+    border-bottom: 1px dashed rgba(212,175,55,0.25);
+    text-align: center;
+}
+
+.receipt-head h4 { font-size: 11px; color: var(--gold-glow); font-weight: 700; }
+.receipt-body { padding: 14px; }
+.receipt-line { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 12px; }
+.receipt-line span { color: var(--text-darker); }
+.receipt-line strong { color: #fff; }
+.receipt-divider { border-top: 1px dashed rgba(255,255,255,0.08); margin: 10px 0; }
+.receipt-total { font-size: 15px; font-weight: 700; color: var(--neon-green); text-align: center; }
+
+/* الفتح التفاعلي المحمي للنوافذ المنبثقة للنجاح والإدارة */
+.modal-blur {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); backdrop-filter: blur(4px);
+    display: flex; justify-content: center; align-items: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 9999;
+}
+
+.modal-blur.active { opacity: 1; pointer-events: auto; }
+
+.modal-panel {
+    background-color: var(--panel-prime); width: 88%; max-width: 350px;
+    border-radius: 16px; border: 1px solid var(--gold-glow);
+    padding: 24px; text-align: center;
+}
+
+.modal-icons-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.modal-wa-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #25d366;
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
+}
+
+.modal-wa-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.45);
+}
+
+.modal-panel h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: var(--neon-green); }
+.modal-panel p { font-size: 12px; color: var(--text-darker); margin-bottom: 20px; line-height: 1.5; }

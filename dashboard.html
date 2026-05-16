@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم الإدارية الفاخرة - صالون وسيم</title>
+    <style>
+        @import url('https://googleapis.com');
+
+        /* إجبار النظام على استخدام ألوان نخبوية عالية التباين والوضوح */
+        body {
+            background-color: #0b0b0c !important;
+            color: #ffffff !important;
+            margin: 0;
+            padding: 20px 12px;
+            font-family: 'Tajawal', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            direction: rtl;
+        }
+
+        .admin-container {
+            width: 100%;
+            max-width: 460px;
+            background-color: #151518;
+            border-radius: 20px;
+            border: 1px solid #d4af37;
+            padding: 22px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            box-sizing: border-box;
+        }
+
+        .admin-header {
+            text-align: center;
+            margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 18px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background-color: rgba(46, 204, 113, 0.15);
+            color: #2ecc71;
+            margin-bottom: 8px;
+        }
+        
+        .live-badge::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            background-color: #2ecc71;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #2ecc71;
+        }
+
+        .admin-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 4px 0;
+        }
+
+        .admin-subtitle {
+            font-size: 11px;
+            color: #a0a0a5;
+            margin: 0;
+        }
+
+        /* شبكة الإحصائيات الفاخرة واضحة المعالم */
+        .dashboard-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 12px; 
+            margin-bottom: 25px; 
+        }
+        
+        .stat-box { 
+            background: #1e1e24; 
+            padding: 16px; 
+            border-radius: 14px; 
+            border: 1px solid rgba(255, 255, 255, 0.04); 
+            text-align: center;
+        }
+        
+        .stat-box h4 { 
+            font-size: 12px; 
+            color: #b3b3b3 !important; /* لون رمادي فاتح واضح جداً للعنوان */
+            margin: 0 0 6px 0;
+            font-weight: 500;
+        }
+        
+        .stat-box p { 
+            font-size: 20px; 
+            font-weight: 700; 
+            color: #d4af37 !important; /* لون ذهبي ملكي للرقم */
+            margin: 0;
+        }
+        
+        .orders-wrapper { 
+            background: #1a1a1f; 
+            border-radius: 16px; 
+            border: 1px solid rgba(255, 255, 255, 0.05); 
+            padding: 18px; 
+        }
+        
+        .table-title { 
+            font-size: 14px; 
+            font-weight: 700; 
+            margin-bottom: 15px; 
+            color: #ffffff; 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* بطاقات الحجوزات الحية فائقة التباين والترتيب */
+        .order-card { 
+            background: #22222a; 
+            padding: 15px; 
+            border-radius: 12px; 
+            margin-bottom: 12px; 
+            border: 1px solid rgba(255, 255, 255, 0.03); 
+            font-size: 13px; 
+            line-height: 1.6;
+        }
+        
+        .order-card div { 
+            margin-bottom: 5px; 
+            color: #ffffff !important; /* تثبيت اللون الأبيض لبيانات الحجز */
+        }
+        
+        .label-text { 
+            color: #a0a0a5 !important; 
+            display: inline-block;
+            width: 75px;
+        }
+        
+        .value-service { color: #5dade2 !important; font-weight: 700; }
+        .value-barber { color: #f5b041 !important; font-weight: 700; }
+        
+        .order-footer { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            font-size: 11px; 
+            margin-top: 10px; 
+            border-top: 1px dashed rgba(255, 255, 255, 0.1); 
+            padding-top: 10px; 
+        }
+        
+        .method-badge {
+            background-color: rgba(46, 204, 113, 0.15);
+            color: #2ecc71;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            border: 1px solid rgba(46, 204, 113, 0.2);
+        }
+
+        .actions-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .btn-action {
+            padding: 13px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .btn-refresh {
+            background: #d4af37;
+            color: #131313;
+        }
+        
+        .btn-clear {
+            background: rgba(231, 76, 60, 0.1);
+            border: 1px solid #e74c3c;
+            color: #ec7063;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="admin-container">
+        
+        <div class="admin-header">
+            <div class="live-badge">تحديث فوري نشط</div>
+            <h2 class="admin-title">لوحة الإدارة والمبيعات</h2>
+            <p class="admin-subtitle">المنظومة الرقمية لصالون وسيم الفاخر للرجال</p>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="stat-box">
+                <h4>💵 مبيعات اليوم</h4>
+                <p id="total-revenue">0 ر.س</p>
+            </div>
+            <div class="stat-box">
+                <h4>📅 إجمالي المقاعد</h4>
+                <p id="total-bookings">0 حجز</p>
+            </div>
+        </div>
+
+        <div class="orders-wrapper">
+            <div class="table-title">
+                <span>🗂️ الموائد والمقاعد المشغولة</span>
+            </div>
+            <div id="live-orders-list">
+                <p style="text-align: center; color: #a0a0a5; font-size: 12px; padding: 25px 0;">لا توجد حجوزات نشطة مسجلة بالنظام حتى الآن.</p>
+            </div>
+        </div>
+        
+        <div class="actions-container">
+            <button class="btn-action btn-refresh" onclick="location.reload()">🔄 تحديث البيانات</button>
+            <button class="btn-action btn-clear" onclick="clearOldCache()">🗑️ تصفير السجل</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            loadDashboardData();
+        });
+
+        function loadDashboardData() {
+            const orders = JSON.parse(localStorage.getItem('salon_orders')) || [];
+            
+            const totalRevenue = orders.reduce((sum, order) => sum + parseInt(order.price || 0), 0);
+            document.getElementById('total-revenue').innerText = totalRevenue + ' ر.س';
+            document.getElementById('total-bookings').innerText = orders.length + ' حجز';
+            
+            const listContainer = document.getElementById('live-orders-list');
+            if (orders.length > 0) {
+                listContainer.innerHTML = orders.reverse().map(order => {
+                    const name = order.name || 'عميل كرام';
+                    const phone = order.phone || '05xxxxxxxx';
+                    const branch = order.branch || 'فرع الرياض - العليا الفاخر';
+                    const barber = order.barber || 'أخصائي وسام الفاخر';
+                    const service = order.service || 'الباقة الملكية المتكاملة';
+                    const timeStr = order.time || '4:00 م';
+                    const method = order.method || 'بواسطة مدى';
+                    
+                    let rawDate = order.date || '2026-05-17';
+                    let cleanDate = rawDate;
+                    if (rawDate.includes('T')) {
+                        cleanDate = rawDate.split('T')[0];
+                    }
+
+                    return `
+                        <div class="order-card">
+                            <div><span class="label-text">👤 العميل:</span><span>${name}</span></div>
+                            <div><span class="label-text">✂️ الخدمة:</span><span class="value-service">${service}</span></div>
+                            <div><span class="label-text">📍 الفرع:</span><span>${branch}</span></div>
+                            <div><span class="label-text">💈 الأخصائي:</span><span class="value-barber">${barber}</span></div>
+                            <div><span class="label-text">📱 الجوال:</span><span style="letter-spacing:0.5px;">${phone}</span></div>
+                            <div class="order-footer">
+                                <span style="color:#ffffff; font-weight:500;">📅 ${cleanDate} | ⏰ ${timeStr}</span>
+                                <span class="method-badge">${method}</span>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+        }
+
+        function clearOldCache() {
+            if(confirm('هل أنت متأكد من تصفير وتطهير سجل الحجوزات القديمة بالكامل؟')) {
+                localStorage.removeItem('salon_orders');
+                location.reload();
+            }
+        }
+    </script>
+</body>
+</html>
